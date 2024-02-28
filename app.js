@@ -1,6 +1,14 @@
-const _ = require('lodash')
+const http = require('http')
 
-const test = [1,[2,[3,[4]]]]
-const newtest = _.flatMapDeep(test)
-console.log(newtest)
-console.log("Hello World")
+/*const server = http.createServer((req,res) => {
+  console.log("Server is started")
+  res.end("Hello")
+})*/
+
+const server = http.createServer();
+
+server.on('request',(req,res) => {
+  res.end("hello world")
+})
+
+server.listen(5000);
